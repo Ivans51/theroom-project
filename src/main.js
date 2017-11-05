@@ -8,11 +8,13 @@ import NavOne from './NavOne.vue'
 import Podcast from './Podcast.vue'
 import RoomRated from './RoomRated.vue'
 import Programming from './Programming.vue'
+import ProgDay from './ProgDay.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
     {path: '/podcast/:id', name: 'podcast', component: Podcast},
+    {path: '/progday/:id', name: 'day', component: ProgDay},
     {path: '/roomrated', component: RoomRated},
     {path: '/programming', component: Programming},
     {path: '/home', component: Home},
@@ -28,6 +30,7 @@ Vue.component('home', Home)
 Vue.component('headroom', Head)
 Vue.component('footroom', Foot)
 Vue.component('navone', NavOne)
+Vue.component('progday', ProgDay)
 
 new Vue({
     el: '#app',

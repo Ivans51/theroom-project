@@ -81,14 +81,14 @@
                         <p>Podcast cuando y donde quieras</p>
 
                         <a href="#">
-                            <roter-link :to="{name: 'podcast', params: {id: 16}}"><img src="" alt="">
+                            <router-link :to="{name: 'podcast', params: {id: 16}}">
                                 podcast
-                            </roter-link>
+                            </router-link>
                         </a>
                         <img src="" alt="room-icon-plus-3">
                     </div>
                     <ul>
-                        <li></li>
+                        <li>Podcast</li>
                     </ul>
                 </div>
                 <div class="promotional-video">
@@ -105,7 +105,6 @@
                 </div>
             </div>
         </div>
-
         <router-view></router-view>
     </main>
 </template>
@@ -230,7 +229,7 @@
                         }
                     }
                     .container-room-link {
-                        @include format-link($primary-medium);
+                        @include format-link($primary-medium, center);
                     }
                 }
                 .room-rated {
@@ -247,7 +246,7 @@
                         border-bottom: 1px solid $primary-medium;
                     }
                     .container-room-link {
-                        @include format-link($primary-medium);
+                        @include format-link($primary-medium, center);
                     }
                 }
                 .room-news {
@@ -286,6 +285,12 @@
                 }
                 .promotional-podcast {
                     margin-right: 1%;
+                    ul > li:nth-child(odd) {
+                        background: $secondary-light;
+                    }
+                    ul > li {
+                        padding: 15px 10px;
+                    }
                     .podcast-title {
                         border-top: 1px solid $primary-medium;
                         margin: 0 2%;

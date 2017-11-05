@@ -28,6 +28,10 @@
         box-sizing: border-box;
     }
 
+    body {
+        background: black;
+    }
+
     figure {
         margin: 0;
     }

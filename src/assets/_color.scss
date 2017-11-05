@@ -1,0 +1,19 @@
+$link-color: hsl(255, 255, 255);
+$primary-light: rgb(203, 244, 195);
+$primary-medium: rgb(81, 246, 55);
+$secondary-light: rgb(30, 9, 73);
+$secondary-dark: rgb(18, 6, 44);
+
+/* Tamaño de botones */
+@mixin boton-tamaño($imagen, $altura, $ancho) {
+  background: url($imagen) no-repeat;
+  background-size: contain;
+  height: $altura;
+  width: $ancho;
+}
+
+@mixin flexible($flex : wrap, $justify : inherit) {
+  display: flex;
+  flex-wrap: $flex;
+  justify-content: $justify;
+}

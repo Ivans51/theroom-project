@@ -20,7 +20,7 @@ gulp.task('image', function(){
 })
 
 gulp.task('styles', function () {
-    gulp.src('public/**/*.scss')
+    gulp.src('sass/**/*.scss')
         .pipe(plumber())
         .pipe(sass({
             outputStyle: 'expended'
@@ -29,7 +29,7 @@ gulp.task('styles', function () {
             versions: ['last 2 browsers']
         }))
         // .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('build/css/'))
+        .pipe(gulp.dest('css/'))
         .pipe(browserSync.stream())
 })
 
@@ -37,12 +37,12 @@ gulp.task('watch', function () {
     browserSync.init({
         /**
          * localhost/{name of the route} */
-        proxy: "localhost/theroom/"
+        proxy: "localhost:8080/"
     })
     gulp.watch('./*.php').on('change', browserSync.reload);
-    gulp.watch('./public/**/*.js', ['scripts']);
-    gulp.watch('./public/**/*.scss', ['styles']);
-    gulp.watch("./public/**/*.php").on('change', browserSync.reload);
+    //gulp.watch('./public/**/*.js', ['scripts']);
+    gulp.watch('./sass/**/*.scss', ['styles']);
+    gulp.watch("./**/*.vue").on('change', browserSync.reload);
 })
 
 gulp.task('default', ['scripts', 'styles', 'watch']);
